@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* CSS Variables for Frosted Glass Theme */
+:root {
+  --bg: #FFF8FB;
+  --sec-bg: #FCEEF5;
+  --accent: #E36A9A;
+  --gold: #C88A9A;
+  --ink: #2C2C2C;
+  --muted: #6F6F6F;
+  --glass: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.55);
+}
+
+/* Base Overrides & Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Background blur ornaments */
+.ornament {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  -webkit-filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8FB;
+}
+::-webkit-scrollbar-thumb {
+  background: #C88A9A;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E36A9A;
+}
+
+/* Decorative Animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.05);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(15px) scale(0.95);
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.1);
+  }
+}
+
+.animate-float-1 {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: floatReverse 10s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 6s ease-in-out infinite;
+}
+
+/* Scroll Animation Classes */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* Luxury Pink Gradient Buttons and Backgrounds */
+.bg-luxury-gradient {
+  background: linear-gradient(135deg, #E36A9A 0%, #C88A9A 100%);
+}
+
+.bg-luxury-gradient-hover {
+  background: linear-gradient(135deg, #C88A9A 0%, #E36A9A 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #E36A9A 0%, #C88A9A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Frosted Glass Cards and Hover Effects */
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px rgba(227, 106, 154, 0.08);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(227, 106, 154, 0.25);
+  box-shadow: 0 16px 36px rgba(227, 106, 154, 0.14);
+  transform: translateY(-4px);
+}
+
+/* Map luxury-card directly to look like high-end Frosted Glass card */
+.luxury-card {
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px rgba(227, 106, 154, 0.07);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-card:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(227, 106, 154, 0.25);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(227, 106, 154, 0.15);
+}
+
+/* Custom Notification Toast */
+.toast-notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: rgba(44, 44, 44, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  padding: 14px 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transform: translateY(150%);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 100;
+}
+
+.toast-notification.show {
+  transform: translateY(0);
+}

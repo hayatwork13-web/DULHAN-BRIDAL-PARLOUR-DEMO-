@@ -1,0 +1,6 @@
+{
+  "name": "Dulhan Beauty Parlors",
+  "description": "Luxury Bridal Beauty Salon & Makeup Studio in Latifabad, Hyderabad, Pakistan",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
