@@ -190,6 +190,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 4000);
   }
 
+  // Expose toast and copy address globally
+  window.showToast = showToast;
+  window.copyAddress = function() {
+    const addressText = "House # 43, opp. Meezan Bank - Latifabad Branch, Latifabad Unit 7, Latifabad, Hyderabad, 71000, Pakistan";
+    navigator.clipboard.writeText(addressText).then(() => {
+      showToast("Address copied to clipboard! 📋", "success");
+    }).catch(err => {
+      console.error('Could not copy text: ', err);
+    });
+  };
+
   // 7. Mini Testimonial Carousel Indicator Logic
   const testimonialCards = document.querySelectorAll('.testimonial-card');
   const dots = document.querySelectorAll('.carousel-dot');

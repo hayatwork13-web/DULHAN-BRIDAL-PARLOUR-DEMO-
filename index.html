@@ -892,45 +892,75 @@
           </div>
 
           <div class="space-y-6">
-            <!-- Address Card -->
-            <div class="bg-white border border-borderpink/60 p-6 rounded-2xl flex gap-4 shadow-sm">
-              <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent flex-shrink-0">
-                <i data-lucide="map-pin" class="w-5 h-5"></i>
-              </div>
-              <div>
-                <h4 class="font-semibold text-sm text-charcoal">Studio Address</h4>
-                <p class="text-xs text-muted leading-relaxed mt-1">
-                  House #43, Opposite Meezan Bank – Latifabad Branch,<br />
-                  Latifabad Unit 7, Hyderabad, 71000, Pakistan
-                </p>
+            <!-- Address & Business Information Card -->
+            <div class="glass-card p-6 rounded-2xl flex flex-col gap-4 shadow-sm group">
+              <div class="flex gap-4">
+                <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent flex-shrink-0 transition-transform group-hover:scale-110">
+                  <i data-lucide="map-pin" class="w-5 h-5"></i>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-semibold text-sm text-charcoal flex items-center gap-2 justify-between">
+                    <span>📍 Business Address</span>
+                    <button onclick="copyAddress()" class="text-[10px] text-accent hover:underline flex items-center gap-1 cursor-pointer">
+                      <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Address
+                    </button>
+                  </h4>
+                  <a href="https://www.google.com/maps/search/?api=1&query=House+%23+43,+opp.+Meezan+Bank+-+Latifabad+Branch,+Latifabad+Unit+7+Latifabad,+Hyderabad,+71000,+Pakistan" 
+                     target="_blank" 
+                     title="Click to view on Google Maps"
+                     class="block text-xs text-muted leading-relaxed mt-2 hover:text-accent transition-colors">
+                    House # 43, opp. Meezan Bank - Latifabad Branch, Latifabad Unit 7 Latifabad, Hyderabad, 71000, Pakistan
+                  </a>
+                  <div class="mt-3 flex items-center gap-3">
+                    <a href="https://www.google.com/maps/search/?api=1&query=House+%23+43,+opp.+Meezan+Bank+-+Latifabad+Branch,+Latifabad+Unit+7+Latifabad,+Hyderabad,+71000,+Pakistan" 
+                       target="_blank" 
+                       class="inline-flex items-center gap-1.5 text-xs font-semibold text-accent hover:text-accent/85 hover:underline">
+                      <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
+                      <span>📍 Get Directions Button</span>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 
             <!-- Contact Card -->
-            <div class="bg-white border border-borderpink/60 p-6 rounded-2xl flex gap-4 shadow-sm">
-              <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent flex-shrink-0">
-                <i data-lucide="phone" class="w-5 h-5"></i>
+            <div class="glass-card p-6 rounded-2xl flex flex-col gap-4 shadow-sm group">
+              <div class="flex gap-4">
+                <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent flex-shrink-0 transition-transform group-hover:scale-110">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-semibold text-sm text-charcoal">📞 Phone Number</h4>
+                  <a href="tel:923133036372" class="block text-xs text-muted leading-relaxed mt-1 hover:text-accent transition-colors font-mono">
+                    923133036372
+                  </a>
+                </div>
               </div>
-              <div>
-                <h4 class="font-semibold text-sm text-charcoal">Phone & WhatsApp</h4>
-                <p class="text-xs text-muted leading-relaxed mt-1">
-                  Call/Text: +92 313 3036372<br />
-                  Inquiries: +92 313 3036372
-                </p>
+              
+              <div class="flex gap-4 pt-3 border-t border-borderpink/20">
+                <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center text-green-600 flex-shrink-0 transition-transform group-hover:scale-110">
+                  <i data-lucide="message-circle" class="w-5 h-5"></i>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-semibold text-sm text-charcoal">💬 WhatsApp</h4>
+                  <a href="https://wa.me/923133036372" target="_blank" class="block text-xs text-muted leading-relaxed mt-1 hover:text-green-600 transition-colors font-mono">
+                    923133036372
+                  </a>
+                </div>
               </div>
             </div>
 
             <!-- Business Hours Card -->
-            <div class="bg-white border border-borderpink/60 p-6 rounded-2xl flex gap-4 shadow-sm">
-              <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent flex-shrink-0">
+            <div class="glass-card p-6 rounded-2xl flex gap-4 shadow-sm group">
+              <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent flex-shrink-0 transition-transform group-hover:scale-110">
                 <i data-lucide="clock" class="w-5 h-5"></i>
               </div>
               <div>
-                <h4 class="font-semibold text-sm text-charcoal">Business Hours</h4>
-                <p class="text-xs text-muted leading-relaxed mt-1">
-                  Tuesday – Sunday: 11:00 AM – 09:00 PM<br />
-                  <span class="text-accent font-semibold">Monday: Closed (Private Bookings Only)</span>
-                </p>
+                <h4 class="font-semibold text-sm text-charcoal">🕒 Business Hours</h4>
+                <div class="text-xs text-muted leading-relaxed mt-1 space-y-0.5">
+                  <p><span class="font-medium text-charcoal">Tuesday – Sunday:</span> 11:00 AM – 09:00 PM</p>
+                  <p><span class="text-accent font-semibold">Monday: Closed</span> (Private Bookings Only)</p>
+                </div>
               </div>
             </div>
           </div>
@@ -938,20 +968,79 @@
 
         <!-- Location Landmark Card & Contact Form -->
         <div class="lg:col-span-7 space-y-8 scroll-reveal delay-200">
-          <!-- Elegant Landmark Banner (Replaces embedded map for absolute clean style) -->
-          <div class="bg-secondary p-8 rounded-3xl border border-borderpink relative overflow-hidden text-center shadow-md">
-            <div class="absolute -left-12 -bottom-12 w-32 h-32 bg-accent/5 rounded-full"></div>
-            <i data-lucide="map-pin" class="text-accent w-12 h-12 mx-auto mb-4 animate-bounce"></i>
-            <h3 class="font-serif text-xl font-bold text-charcoal mb-2">Opposite Meezan Bank, Latifabad Unit 7</h3>
-            <p class="text-xs text-muted max-w-md mx-auto leading-relaxed mb-6">
-              Our salon is located directly across from Meezan Bank's Latifabad Unit 7 branch, offering extremely easy vehicle parking and clear visibility.
-            </p>
-            <div class="flex justify-center gap-4">
-              <a href="https://wa.me/923133036372?text=Hello%20Dulhan%20Beauty%20Parlors%2C%20I'm%20nearby%20Meezan%20Bank.%20Could%20you%20guide%20me%20to%20the%20entrance%3F" 
-                 target="_blank" 
-                 class="bg-white border border-accent/20 px-6 py-2.5 rounded-full text-xs font-bold text-accent hover:bg-accent/10 transition-colors">
-                Get Directions via WhatsApp
-              </a>
+          <!-- Fully designed Google Maps Section -->
+          <div class="luxury-card glass-card p-6 sm:p-8 rounded-3xl border border-borderpink/60 shadow-xl relative overflow-hidden transition-all duration-300 group">
+            <!-- Header elements -->
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-accent/15 flex items-center justify-center text-accent">
+                  <i data-lucide="map" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h3 class="font-serif text-lg sm:text-xl font-bold text-charcoal">Interactive Location Guide</h3>
+                  <p class="text-xs text-muted flex items-center gap-1">
+                    <i data-lucide="compass" class="w-3.5 h-3.5 text-accent"></i>
+                    <span>Opposite Meezan Bank, Latifabad Unit 7</span>
+                  </p>
+                </div>
+              </div>
+              
+              <!-- Map Action Badges -->
+              <div class="flex gap-2 w-full sm:w-auto">
+                <button onclick="copyAddress()" 
+                        class="flex-1 sm:flex-none flex items-center justify-center gap-1.5 text-xs font-bold px-4 py-2 border border-borderpink rounded-full hover:bg-secondary text-charcoal/80 hover:text-accent transition-all duration-300 cursor-pointer">
+                  <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                  <span>Copy Address</span>
+                </button>
+                <a href="https://www.google.com/maps/search/?api=1&query=House+%23+43,+opp.+Meezan+Bank+-+Latifabad+Branch,+Latifabad+Unit+7+Latifabad,+Hyderabad,+71000,+Pakistan" 
+                   target="_blank" 
+                   class="flex-1 sm:flex-none flex items-center justify-center gap-1.5 text-xs font-bold px-4 py-2 bg-luxury-gradient text-white rounded-full shadow-md shadow-accent/20 hover:opacity-95 transition-all duration-300">
+                  <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
+                  <span>Get Directions</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Clickable Address Bar -->
+            <div class="mb-6 bg-secondary/60 p-4 rounded-xl border border-borderpink/30 flex items-start gap-3">
+              <div class="text-accent mt-0.5"><i data-lucide="map-pin" class="w-4.5 h-4.5"></i></div>
+              <div class="flex-1">
+                <span class="block text-[10px] font-bold uppercase tracking-widest text-muted">Click Address to view on Google Maps</span>
+                <a href="https://www.google.com/maps/search/?api=1&query=House+%23+43,+opp.+Meezan+Bank+-+Latifabad+Branch,+Latifabad+Unit+7+Latifabad,+Hyderabad,+71000,+Pakistan" 
+                   target="_blank" 
+                   class="text-xs font-medium text-charcoal hover:text-accent transition-colors leading-relaxed block mt-1">
+                  House # 43, opp. Meezan Bank - Latifabad Branch, Latifabad Unit 7 Latifabad, Hyderabad, 71000, Pakistan
+                </a>
+              </div>
+            </div>
+
+            <!-- Responsive Interactive Map Container -->
+            <div class="relative w-full h-[320px] rounded-2xl overflow-hidden border border-borderpink/60 shadow-inner group-hover:border-accent/30 transition-colors duration-300">
+              <iframe 
+                src="https://maps.google.com/maps?q=House%20%23%2043%2C%20opp.%20Meezan%20Bank%20-%20Latifabad%20Branch%2C%20Latifabad%20Unit%207%20Latifabad%2C%20Hyderabad%2C%2071000%2C%20Pakistan&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                class="absolute inset-0 w-full h-full border-0" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+
+            <!-- Map Location Details Row -->
+            <div class="grid sm:grid-cols-2 gap-4 mt-6 pt-6 border-t border-borderpink/40">
+              <div class="flex items-start gap-3">
+                <div class="text-accent mt-1 bg-accent/10 p-1.5 rounded-lg"><i data-lucide="car" class="w-4 h-4"></i></div>
+                <div>
+                  <h4 class="text-xs font-bold text-charcoal">Parking Information</h4>
+                  <p class="text-[11px] text-muted leading-relaxed mt-1">Spacious, secure curbside parking is available directly in front of the parlor for our valued bridal clients.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="text-accent mt-1 bg-accent/10 p-1.5 rounded-lg"><i data-lucide="star" class="w-4 h-4"></i></div>
+                <div>
+                  <h4 class="text-xs font-bold text-charcoal">Nearby Landmarks</h4>
+                  <p class="text-[11px] text-muted leading-relaxed mt-1">Situated directly opposite Meezan Bank's Latifabad Unit 7 Branch, right on the central commercial boulevard.</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1054,15 +1143,17 @@
 
         <!-- Location Landmark -->
         <div class="space-y-4">
-          <h4 class="text-xs font-bold uppercase tracking-widest text-rosegold">Studio Landmark</h4>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-rosegold">Studio Location</h4>
           <p class="text-xs text-white/60 leading-relaxed">
-            House #43, Unit 7,<br />
-            Opposite Meezan Bank,<br />
-            Latifabad, Hyderabad, Pakistan.
+            <a href="https://www.google.com/maps/search/?api=1&query=House+%23+43,+opp.+Meezan+Bank+-+Latifabad+Branch,+Latifabad+Unit+7+Latifabad,+Hyderabad,+71000,+Pakistan" 
+               target="_blank" 
+               class="hover:text-accent transition-colors">
+              House # 43, opp. Meezan Bank - Latifabad Branch, Latifabad Unit 7 Latifabad, Hyderabad, 71000, Pakistan
+            </a>
           </p>
           <div class="text-xs text-white/60">
             <span class="block font-semibold text-accent">Appointment Hotline:</span>
-            <span>+92 313 3036372</span>
+            <a href="tel:923133036372" class="hover:text-accent transition-colors">923133036372</a>
           </div>
         </div>
       </div>
